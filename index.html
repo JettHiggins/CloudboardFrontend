@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> 
-    <link rel="stylesheet" href="{{ url_for('static', filename='test.css') }}">    
+    <link rel="stylesheet" href="/test.css">    
 </head>
 <body>
     <script src="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.js"></script>
@@ -10,13 +10,7 @@
     <div class="flex-container">
         <div class="user-info">
             <div class="login-bar">
-                <span id="user-text">
-                    {% if 'username' in session %}
-                        User:  {{session['username']}}
-                    {% else %}
-                        Please Login 
-                    {% endif %}
-                </span>
+                <span id="user-text"></span>
                 <div class="popup hidden" id="popup">
                     <div class="tabs"> 
                         <button id="login-tab" class="tab active" onclick="toggleTab(true);"> Login </button>
@@ -60,5 +54,5 @@
             <input id="Paste-Board" type="button" value="Paste" onclick="fetch_clipboard();"></input>
         </div>
     </div>
-    <script src="{{ url_for('static', filename='app.js') }}"></script>
+    <script src="/app.js"></script>
 </body>

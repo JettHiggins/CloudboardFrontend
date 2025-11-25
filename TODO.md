@@ -1,0 +1,1 @@
+Reaserch Flask Sessions more, Think I need to switch to JWT in a non monolithic application because I dont want server side.

@@ -1,20 +1,20 @@
-const loginForm = document.querySelector('#login-form')
-const registerForm = document.querySelector("#register-form")
-const loginTab = document.querySelector("#login-tab")
-const registerTab = document.querySelector("#register-tab")
+const loginForm = document.querySelector('#login-form');
+const registerForm = document.querySelector("#register-form");
+const loginTab = document.querySelector("#login-tab");
+const registerTab = document.querySelector("#register-tab");
+const serverurl = 'http://192.168.1.168:8080';
 
+loginForm.addEventListener('submit', login);
+registerForm.addEventListener('submit', register);
 
-
-loginForm.addEventListener('submit', login)
-registerForm.addEventListener('submit', register)
-
-const registerPopup = document.querySelector('#register-popup')
+const registerPopup = document.querySelector('#register-popup');
 
 const quill = new Quill('#editor', {
   modules: { toolbar: false },
   theme: 'snow',
   placeholder: 'Add Image/Text'
 });
+
 let getInput = function() {
   delta = quill.getContents();
   let clipboard = [];
@@ -59,7 +59,7 @@ let togglePopup = () => {
 }
 
 async function userLogout() {
-  const response = await fetch("/logout", {
+  const response = await fetch(serverurl + "/logout", {
     method: "POST"
   })
   if (response.ok){
@@ -77,7 +77,7 @@ async function login(e){
   const failed_text = loginForm.querySelector(".failed-login")
   const data = new FormData(loginForm)
 
-  const response = await fetch("/login", {
+  const response = await fetch(serverurl + "/login", {
     method : "POST",
     headers: {
       "Content-Type": "application/json",
@@ -97,7 +97,7 @@ async function register(e){
   e.preventDefault()
   const data = new FormData(registerForm)
   const failed = registerForm.querySelector(".failed-Registration")
-  const response = await fetch("/register", {
+  const response = await fetch(serverurl + "/register", {
     method : "POST",
     headers: {
       "Content-Type": "application/json"
@@ -115,7 +115,7 @@ async function register(e){
 }
 
 async function fetch_clipboard(){
-  const response = await fetch('/api/recieve', {
+  const response = await fetch(serverurl + '/api/recieve', {
     method : "POST"
   })
   if (response.ok) {
@@ -173,3 +173,15 @@ function copy_editor(e) {
   }); 
   */
 }
+
+async function login_status() {
+  const response = await fetch(serverurl + "/api/login-status", {
+    method : "POST"
+  });
+  if (response.ok) {
+    text = await response.json();
+    document.querySelector('#user-text').innerText = text['response'];
+  }
+}
+
+login_status();
