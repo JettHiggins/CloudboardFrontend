@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> 
+    <link rel="stylesheet" href="{{ url_for('static', filename='test.css') }}">    
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.snow.css" rel="stylesheet">
+    <div class="flex-container">
+        <div class="user-info">
+            <div class="login-bar">
+                <span id="user-text">
+                    {% if 'username' in session %}
+                        User:  {{session['username']}}
+                    {% else %}
+                        Please Login 
+                    {% endif %}
+                </span>
+                <div class="popup hidden" id="popup">
+                    <div class="tabs"> 
+                        <button id="login-tab" class="tab active" onclick="toggleTab(true);"> Login </button>
+                        <button id="register-tab" class="tab" onclick ="toggleTab(false);"> Register </button>
+                    </div>
+                    <form class="popup-contents" id="login-form" action="login" name="login" method="post">
+                        <label> Username:
+                            <input name="username" type="text" required>
+                        </label>
+                        <label> Password:
+                            <input name="password" type="text" autocomplete="off" required>
+                        </label>
+
+                        <button type="submit"> Login </button>
+                        <input id="Logout" type="button" value="Logout" onclick="userLogout();"/>
+                        <span class="failed-login"> Failed Login! </span>
+                    </form>
+                    <form class="popup-contents hidden" id="register-form" action="register" name="register" method="post">
+                        <label> Username:
+                            <input name="username" type="text" required>
+                        </label>
+                        <label> Password:
+                            <input name="password" type="text" autocomplete="off" required>
+                        </label>
+
+                        <button type="submit"> Register </button>
+                        <div class="failed-Registration hidden"> Failed Registration! </div>
+                    </form>
+                </div>
+            </div>
+            <div class="user-icon" onclick="togglePopup();">
+                <i class="glyphicon glyphicon-user"></i>
+            </div>    
+
+        </div>
+        <div class="flex-item">
+            <div id="editor"></div>
+        </div>
+        <div class="flex-item-2">
+            <input id="Send" type="button" value="Send to Phone" onclick="getInput();"/>
+            <input id="Paste-Board" type="button" value="Paste" onclick="fetch_clipboard();"></input>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
