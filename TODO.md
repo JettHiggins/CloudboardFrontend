@@ -5,4 +5,4 @@
 
     - [x] Add button functionality through JS and not in HTML
 
-    - [ ] Popup does not seem to be popping up
+    - [x] Popup does not seem to be popping up - Fix event listeners instead of attrib update and add function () 
