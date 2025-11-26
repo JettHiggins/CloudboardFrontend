@@ -190,4 +190,13 @@ async function login_status() {
   }
 }
 
+// Load Status
 login_status();
+
+//Configure the Buttons
+document.querySelector("#login-tab").addEventListener('click' , function () {toggleTab(true)});
+document.querySelector("#register-tab").addEventListener('click' , function () {toggleTab(true)});
+document.querySelector("#Logout").addEventListener('click' , function () {userLogout()});
+document.querySelector(".user-icon").addEventListener('click' , function () {togglePopup()});
+document.querySelector("#Send").addEventListener('click' , function () {getInput()});
+document.querySelector("#Paste-Board").addEventListener('click' , function () {fetch_clipboard()});
