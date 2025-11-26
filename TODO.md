@@ -1,1 +1,2 @@
 - [ ] Start to convert to Chrome extension research required. 
+    - [ ] Adding manifest.json
