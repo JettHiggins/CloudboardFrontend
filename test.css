@@ -13,6 +13,7 @@ body{
     height: 3vh;
     width: 200px;
     align-items: center;
+    margin-bottom: 5px;
 }
 .user-icon {
     transition: all 0.4s;

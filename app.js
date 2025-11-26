@@ -2,7 +2,7 @@ const loginForm = document.querySelector('#login-form');
 const registerForm = document.querySelector("#register-form");
 const loginTab = document.querySelector("#login-tab");
 const registerTab = document.querySelector("#register-tab");
-const serverurl = 'http://192.168.1.168:8080';
+const serverurl = 'http://127.0.0.1:8080';
 
 loginForm.addEventListener('submit', login);
 registerForm.addEventListener('submit', register);
@@ -28,8 +28,9 @@ let getInput = function() {
 
 let sendPayload = async(payload) => {
   //Payload is an array of strings either containing an image or a string of text
-  await fetch('/api/send' , {
+  await fetch(serverurl + '/api/send' , {
     method : "POST",
+    credentials : 'include',
     headers : {
       'Content-Type' : 'application/json'
     },
@@ -60,7 +61,8 @@ let togglePopup = () => {
 
 async function userLogout() {
   const response = await fetch(serverurl + "/logout", {
-    method: "POST"
+    method: "POST", 
+    credentials : 'include'
   })
   if (response.ok){
     const userInfo = document.querySelector('#user-text')
@@ -79,6 +81,7 @@ async function login(e){
 
   const response = await fetch(serverurl + "/login", {
     method : "POST",
+    credentials : 'include',
     headers: {
       "Content-Type": "application/json",
     },
@@ -99,6 +102,7 @@ async function register(e){
   const failed = registerForm.querySelector(".failed-Registration")
   const response = await fetch(serverurl + "/register", {
     method : "POST",
+    credentials : 'include',
     headers: {
       "Content-Type": "application/json"
     },
@@ -115,8 +119,9 @@ async function register(e){
 }
 
 async function fetch_clipboard(){
-  const response = await fetch(serverurl + '/api/recieve', {
-    method : "POST"
+  const response = await fetch(serverurl + '/api/receive', {
+    method : "POST",  
+    credentials : 'include'
   })
   if (response.ok) {
     clear_quill();
@@ -176,7 +181,8 @@ function copy_editor(e) {
 
 async function login_status() {
   const response = await fetch(serverurl + "/api/login-status", {
-    method : "POST"
+    method : "POST",
+    credentials : 'include',
   });
   if (response.ok) {
     text = await response.json();
