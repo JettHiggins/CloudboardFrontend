@@ -6,3 +6,15 @@
     - [x] Add button functionality through JS and not in HTML
 
     - [x] Popup does not seem to be popping up - Fix event listeners instead of attrib update and add function () 
+
+    - [ ] Uninstall Ionic 
+
+    - [ ] Install Capacitor 
+
+    - [ ] Conifigure a test Vite frontend for the Capacitor Project
+
+    - [ ] Setup a server url for CORS
+
+    - [ ] Build to Phone and TEST
+
+    
