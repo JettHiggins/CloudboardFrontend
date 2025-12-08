@@ -1,5 +1,5 @@
 {
-  "name": "My PWA",
+  "name": "Cloud Clipboard",
   "start_url" : "/",
   "display" : "standalone",
   "icons": [
