@@ -7,6 +7,6 @@
     "default_popup": "index.html"
   },
   "host_permissions": [
-    "https://cloudboardapi-361091451760.us-east1.run.app"
+    "https://cloudboardapi-361091451760.us-east1.run.app/*"
   ]
 }

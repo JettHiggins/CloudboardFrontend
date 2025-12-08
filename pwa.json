@@ -1,0 +1,12 @@
+{
+  "name": "My PWA",
+  "start_url" : "/",
+  "display" : "standalone",
+  "icons": [
+    {
+      "src": "Aha-Soft-Iron-Man-Ironman-Mask-3-Old.512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ]
+}

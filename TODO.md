@@ -7,14 +7,13 @@
 
     - [x] Popup does not seem to be popping up - Fix event listeners instead of attrib update and add function () 
 
-    - [ ] Uninstall Ionic 
+    - [x] Uninstall Ionic 
+    
+    - [x] Add Basic PWA functionality
 
-    - [ ] Install Capacitor 
+    - [ ] Make UI better on PWA functionality
+    
+    - [ ] Host frontend somewhere so people can download the PWA. 
 
-    - [ ] Conifigure a test Vite frontend for the Capacitor Project
-
-    - [ ] Setup a server url for CORS
-
-    - [ ] Build to Phone and TEST
 
     
