@@ -4,9 +4,15 @@
   "display" : "standalone",
   "icons": [
     {
-      "src": "Aha-Soft-Iron-Man-Ironman-Mask-3-Old.512.png",
+      "src": "cloudclipboard_512.png",
       "type": "image/png",
       "sizes": "512x512"
+    },
+    {
+      "src": "cloudclipboard_1024.png",
+      "type": "image/png",
+      "sizes": "1024x1024",
+      "purpose" : "maskable"
     }
   ]
 }
