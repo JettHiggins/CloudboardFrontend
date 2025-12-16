@@ -3,8 +3,8 @@ const registerForm = document.querySelector("#register-form");
 const loginTab = document.querySelector("#login-tab");
 const registerTab = document.querySelector("#register-tab");
 
-//const serverurl = 'http://127.0.0.1:8080';
-const serverurl = 'https://cloudboardapi-361091451760.us-east1.run.app';
+const serverurl = 'http://127.0.0.1:8080';
+//const serverurl = 'https://cloudboardapi-361091451760.us-east1.run.app';
 
 
 
@@ -126,7 +126,7 @@ async function register(e){
 async function fetch_clipboard(){
   const response = await fetch(serverurl + '/api/receive', {
     method : "POST",  
-    credentials : 'include'
+    credentials : 'include',
   })
   if (response.ok) {
     clear_quill();
@@ -205,3 +205,13 @@ document.querySelector("#Logout").addEventListener('click' , function () {userLo
 document.querySelector(".user-icon").addEventListener('click' , function () {togglePopup()});
 document.querySelector("#Send").addEventListener('click' , function () {getInput()});
 document.querySelector("#Paste-Board").addEventListener('click' , function () {fetch_clipboard()});
+
+//https://stackoverflow.com/questions/21125337/how-to-detect-if-web-app-running-standalone-on-chrome-mobile/34516083#34516083
+function isRunningStandalone() {
+    return (window.matchMedia('(display-mode: standalone)').matches);
+}
+//Service Worker Stuff
+if ("serviceWorker" in navigator /*&& isRunningStandalone()*/){
+	navigator.serviceWorker.register("/serviceworker.js");
+}
+
