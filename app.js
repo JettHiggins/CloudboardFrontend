@@ -3,8 +3,7 @@ const registerForm = document.querySelector("#register-form");
 const loginTab = document.querySelector("#login-tab");
 const registerTab = document.querySelector("#register-tab");
 
-const serverurl = 'http://127.0.0.1:8080';
-//const serverurl = 'https://cloudboardapi-361091451760.us-east1.run.app';
+const serverurl = 'api.cloudclipboard.app';
 
 
 
