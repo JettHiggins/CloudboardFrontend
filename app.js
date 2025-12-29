@@ -7,7 +7,6 @@ const serverurl = 'https://api.cloudclipboard.app';
 
 
 
-
 loginForm.addEventListener('submit', login);
 registerForm.addEventListener('submit', register);
 
@@ -28,6 +27,7 @@ let getInput = function() {
         }
   });
   sendPayload(clipboard);
+  console.log(quill.getSemanticHTML());
 }
 
 let sendPayload = async(payload) => {
@@ -45,23 +45,6 @@ let sendPayload = async(payload) => {
   });
 }
 
-let toggleTab = (isLogin) => {
-    loginForm.classList.toggle("hidden", !isLogin)
-    registerForm.classList.toggle("hidden", isLogin)
-    loginTab.classList.toggle("active", isLogin)
-    registerTab.classList.toggle("active", !isLogin)
-}
-
-let togglePopup = () => {
-  const Popup = document.querySelector('#popup') 
-  if (Popup.classList.contains("hidden")) {
-    Popup.classList.remove("hidden")
-  }
-  else {
-    Popup.classList.add("hidden")
-  }
-
-}
 
 async function userLogout() {
   const response = await fetch(serverurl + "/logout", {
@@ -153,6 +136,23 @@ let display_user = (Username) =>{
     userInfo.innerText = "User: " + Username
 }
 
+let toggleTab = (isLogin) => {
+    loginForm.classList.toggle("hidden", !isLogin)
+    registerForm.classList.toggle("hidden", isLogin)
+    loginTab.classList.toggle("active", isLogin)
+    registerTab.classList.toggle("active", !isLogin)
+}
+
+let togglePopup = () => {
+  const Popup = document.querySelector('#popup') 
+  if (Popup.classList.contains("hidden")) {
+    Popup.classList.remove("hidden")
+  }
+  else {
+    Popup.classList.add("hidden")
+  }
+
+}
 const editor = document.querySelector("#editor")
 editor.addEventListener('copy', copy_editor , {capture : true})
 
