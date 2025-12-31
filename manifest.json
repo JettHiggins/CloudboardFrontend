@@ -3,9 +3,12 @@
   "description": "A Simple Clipboard Storage on the Cloud",
   "version": "1.0",
   "manifest_version": 3,
-  "browser-specific-settings" : {
+  "browser_specific_settings" : {
 	  "gecko": {
-		"id": "cloudclipboard@jetthiggins"
+		"id": "cloudclipboard@jetthiggins",
+		"data_collection_permissions" : {
+			"required" : [ "authenticationInfo" ]
+		}
 	  }
   },
   "action": {
