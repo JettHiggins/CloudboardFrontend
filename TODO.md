@@ -1,17 +1,17 @@
 # CloudClipboard - Checklist
 
 ## Critical for Launch
-- [ ] Test core functionality end-to-end (create account, upload text, paste on different device)
-- [ ] Test core functionality with images
-- [ ] Verify PWA installation works on mobile
-- [ ] Test Chrome extension installation locally
+- [x] Test core functionality end-to-end (create account, upload text, paste on different device)
+- [x] Test core functionality with images
+- [x] Verify PWA installation works on mobile
+- [x] Test Chrome extension installation locally
 
 ## Store Submissions
-- [ ] Create icons/logos in required sizes for Chrome Web Store
-- [ ] Write store description for Chrome extension
+- [x] Create icons/logos in required sizes for Chrome Web Store
+- [x] Write store description for Chrome extension
 - [ ] Take screenshots for Chrome Web Store listing
 - [ ] Submit to Chrome Web Store
-- [ ] Create privacy policy (required for extension store)
+- [x] Create privacy policy (required for extension store)
 - [ ] Set up any required developer accounts/fees
 
 ## Optional (Can Do Later Based on Actual Use)
