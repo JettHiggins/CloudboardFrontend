@@ -5,13 +5,7 @@
   "manifest_version": 3,
   "browser-specific-settings" : {
 	  "gecko": {
-		"id": "@cloudclipboard.jetthiggins",
-		"datacollectionpermissions" : {
-			"required" : [
-				"authenticationInfo"
-			],
-			"optional" : []
-		}
+		"id": "cloudclipboard@jetthiggins"
 	  }
   },
   "action": {
