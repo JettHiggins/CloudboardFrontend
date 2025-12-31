@@ -1,13 +1,3 @@
-if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.getRegistrations().then(function(registrations) {
-    for(let registration of registrations) {
-      console.log('Unregistering Service Worker:', registration);
-      registration.unregister();
-    }
-    // Optional: Force a reload if a controller was found to ensure a clean state
-    if (registrations.length > 0) window.location.reload(); 
-  });
-}
 const loginForm = document.querySelector('#login-form');
 const registerForm = document.querySelector("#register-form");
 const loginTab = document.querySelector("#login-tab");
