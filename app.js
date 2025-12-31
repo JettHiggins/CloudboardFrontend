@@ -209,8 +209,3 @@ document.querySelector("#Paste-Board").addEventListener('click' , function () {f
 function isRunningStandalone() {
     return (window.matchMedia('(display-mode: standalone)').matches);
 }
-//Service Worker Stuff
-if ("serviceWorker" in navigator /*&& isRunningStandalone()*/){
-	navigator.serviceWorker.register("/serviceworker.js");
-}
-
